@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/joaoaccorsi/Library/Mobile Documents/com~apple~CloudDocs/Study/University/2025.01/Computacao de Alto Desempenho/mandelbrot",
+      "program": "/Users/joaoaccorsi/Library/Mobile Documents/com~apple~CloudDocs/Study/University/2025.01/Computacao de Alto Desempenho/mandelbrot/build/Debug/outDebug"
+    }
+  ]
+}
