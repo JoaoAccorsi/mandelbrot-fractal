@@ -7,7 +7,6 @@
 > **Students:** Guilherme Poleto, João Accorsi and Rafael Klauck  
 
 ---
-
 ## 🎯 Objective
 
 The goal of this project is to create a parallelized Mandelbrot Set visualizer using the C programming language with pthreads for multithreading and SDL2 for graphical display.
@@ -19,7 +18,6 @@ The application computes and renders the Mandelbrot fractal onto the screen, all
 - **Complex plane boundaries** (`min_real`, `max_real`, `min_imaginary`, `max_imaginary`) to zoom and explore the Mandelbrot set
 
 ---
-
 ## 🚀 How to Run
 
 ### ✅ Prerequisites
@@ -60,6 +58,7 @@ Two examples of the input would be:
 ./mandelbrot 10 400 -0.7 -0.5 0.0 0.2
 ```
 
+---
 ## 📈 Output
 
 ![image](https://github.com/user-attachments/assets/c9f140a6-bb32-4278-9d97-9ba86ddd4930)
