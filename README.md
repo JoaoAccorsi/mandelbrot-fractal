@@ -61,7 +61,7 @@ Two examples of the input would be:
 ---
 ## 📈 Output
 
-![image](https://github.com/user-attachments/assets/c9f140a6-bb32-4278-9d97-9ba86ddd4930)
+![image](https://github.com/user-attachments/assets/8b8173f6-6778-4552-b411-2ee86b81df8c)
 
 
 
