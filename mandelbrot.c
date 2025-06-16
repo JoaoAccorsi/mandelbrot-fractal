@@ -78,7 +78,7 @@ int main(int argc, char *argv[]) {
 
     // Vizualization setup
     SDL_Init(SDL_INIT_VIDEO);
-    SDL_Window *window = SDL_CreateWindow("Mandelbrot Factral",
+    SDL_Window *window = SDL_CreateWindow("Mandelbrot Fractral",
                                           SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                           size, size, SDL_WINDOW_SHOWN);
     SDL_Renderer *renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
