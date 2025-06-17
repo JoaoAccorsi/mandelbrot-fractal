@@ -21,7 +21,7 @@ typedef struct
 } thread_data_t;
 
 double min_real, max_real, min_imaginary, max_imaginary;
-int thread_calls[32] = {0}; // até 32 threads
+int *thread_calls;
 
 Uint32 get_color(int iter)
 {
@@ -136,6 +136,12 @@ int main(int argc, char *argv[])
     min_imaginary = atof(argv[5]);
     max_imaginary = atof(argv[6]);
 
+    thread_calls = malloc(num_threads * sizeof(int));
+    for (int i = 0; i < num_threads; i++)
+    {
+        thread_calls[i] = 0;
+    }
+
     SDL_Init(SDL_INIT_VIDEO);
     SDL_Window *window = SDL_CreateWindow("Mandelbrot Fractal com Zoom",
                                           SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
@@ -192,6 +198,7 @@ int main(int argc, char *argv[])
     }
 
     free(pixels);
+    free(thread_calls);
     SDL_DestroyTexture(texture);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
