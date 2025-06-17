@@ -3,6 +3,7 @@
 #include <pthread.h>
 #include <SDL2/SDL.h>
 #include <time.h>
+#include <sys/time.h>
 
 // Maximum Iterations
 // The maximum number of iterations to perform for each pixel before deciding:
@@ -75,6 +76,8 @@ void *mandelbrot_thread(void *arg)
 void calculate_and_draw(int num_threads, int size, Uint32 *pixels)
 {
     clock_t start = clock();
+    struct timeval timeStart, timeEnd;
+    gettimeofday(&timeStart, NULL);
 
     pthread_t *threads = malloc(num_threads * sizeof(pthread_t));
     thread_data_t *thread_data = malloc(num_threads * sizeof(thread_data_t));
@@ -97,8 +100,15 @@ void calculate_and_draw(int num_threads, int size, Uint32 *pixels)
         pthread_join(threads[i], NULL);
     }
 
+    // CPU Time
     clock_t end = clock();
-    printf("Recalculo feito em %.2f segundos\n", (double)(end - start) / CLOCKS_PER_SEC);
+    printf("Tempo de CPU gasto: %.2f segundos\n", (double)(end - start) / CLOCKS_PER_SEC);
+
+    // Real time
+    gettimeofday(&timeEnd, NULL);
+    double real_time_used = (timeEnd.tv_sec - timeStart.tv_sec) + (timeEnd.tv_usec - timeStart.tv_usec) / 1000000.0;
+    printf("Tempo real de execução: %.4f segundos\n", real_time_used);
+
     fflush(stdout);
 
     for (int i = 0; i < num_threads; i++)
